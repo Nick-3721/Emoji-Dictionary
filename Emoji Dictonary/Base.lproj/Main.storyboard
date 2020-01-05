@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jpJ-H5-A0s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ysB-cS-ymm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Emoji Table View Controller-->
+        <!--Emoji Dictionary-->
         <scene sceneID="gNm-lu-Oud">
             <objects>
                 <tableViewController id="jpJ-H5-A0s" customClass="EmojiTableViewController" customModule="Emoji_Dictonary" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,10 +30,71 @@
                             <outlet property="delegate" destination="jpJ-H5-A0s" id="YeY-dQ-Jto"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" id="J4f-2g-2su">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="6gJ-5z-sff"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="U2J-v0-mCm" kind="show" identifier="ourSegue" id="DNz-By-hrY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdM-8V-02w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239" y="120"/>
+            <point key="canvasLocation" x="1147.8260869565217" y="119.86607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cAs-Ej-sgX">
+            <objects>
+                <viewController id="U2J-v0-mCm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oxs-VF-su3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-PV-rkZ">
+                                <rect key="frame" x="76.5" y="113" width="261" height="286.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="240"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mystic Ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENc-ta-AET">
+                                <rect key="frame" x="10" y="818.5" width="394" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c2c-FR-qkZ" firstAttribute="bottom" secondItem="ENc-ta-AET" secondAttribute="bottom" constant="10" id="NKL-os-ae9"/>
+                            <constraint firstItem="iYK-PV-rkZ" firstAttribute="top" secondItem="c2c-FR-qkZ" secondAttribute="top" constant="25" id="NzI-1W-zRc"/>
+                            <constraint firstItem="c2c-FR-qkZ" firstAttribute="trailing" secondItem="ENc-ta-AET" secondAttribute="trailing" constant="10" id="QYi-QC-8Jy"/>
+                            <constraint firstItem="iYK-PV-rkZ" firstAttribute="centerX" secondItem="oxs-VF-su3" secondAttribute="centerX" id="nlL-dq-V3W"/>
+                            <constraint firstItem="ENc-ta-AET" firstAttribute="leading" secondItem="c2c-FR-qkZ" secondAttribute="leading" constant="10" id="yzb-rY-L6v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c2c-FR-qkZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Eq1-Ub-kIz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cve-Ps-LpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960.8695652173915" y="119.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ea0-9Q-93e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ysB-cS-ymm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="alu-Q9-1l5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jpJ-H5-A0s" kind="relationship" relationship="rootViewController" id="Qbt-mF-ZHX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fh-3F-eLK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.68115942028987" y="119.86607142857142"/>
         </scene>
     </scenes>
 </document>
